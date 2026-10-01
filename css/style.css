@@ -1,7 +1,571 @@
-header {
-    background-image: url("img/autumn.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 500px;
-    position: relative;
+```css
+/* ==================================================
+   GENERAL
+================================================== */
+
+* {
+    box-sizing: border-box;
 }
+
+body {
+    margin: 0;
+    background-color: #f1e3d0;
+    color: #2b1b12;
+    font-family: Arial, sans-serif;
+}
+
+img {
+    display: block;
+}
+
+
+/* ==================================================
+   NAVIGATION
+================================================== */
+
+.navbar {
+    height: 70px;
+
+    background-color: #24150f;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 50px;
+}
+
+.logo {
+    color: #d9893c;
+    letter-spacing: 2px;
+}
+
+.navbar ul {
+    display: flex;
+
+    list-style-type: none;
+
+    gap: 35px;
+
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+}
+
+.navbar a:hover {
+    color: #d9893c;
+}
+
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero {
+    height: 550px;
+
+    position: relative;
+
+    overflow: visible;
+}
+
+
+/* Slideshow */
+
+.slideshow {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+
+    animation: slideshow 12s infinite;
+}
+
+.slide1 {
+    animation-delay: 0s;
+}
+
+.slide2 {
+    animation-delay: 4s;
+}
+
+.slide3 {
+    animation-delay: 8s;
+}
+
+
+/* CSS ONLY slideshow */
+
+@keyframes slideshow {
+
+    0% {
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    38% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* Hero title */
+
+.hero-title {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+
+    color: white;
+
+    text-shadow: 2px 2px 7px black;
+
+    z-index: 5;
+}
+
+.hero-title h1 {
+    font-size: 60px;
+
+    margin: 0;
+
+    letter-spacing: 4px;
+}
+
+.hero-title p {
+    font-size: 20px;
+}
+
+
+/* Witch */
+
+.witch {
+    width: 75px;
+
+    position: absolute;
+
+    bottom: -28px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 10;
+}
+
+
+/* ==================================================
+   THREE TOP IMAGES
+================================================== */
+
+.top-images {
+    display: flex;
+
+    gap: 25px;
+
+    padding: 70px 50px 50px;
+}
+
+.top-card {
+    width: 33.33%;
+    height: 350px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    text-decoration: none;
+
+    color: white;
+}
+
+.top-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.4s;
+}
+
+.top-card:hover img {
+    transform: scale(1.05);
+}
+
+
+/* Text on first and third */
+
+.top-card-text {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 20px;
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    text-align: center;
+}
+
+.top-card-text h2 {
+    margin: 0;
+}
+
+
+/* Middle text box */
+
+.middle-card-text {
+    position: absolute;
+
+    bottom: 30px;
+    left: 10%;
+    right: 10%;
+
+    padding: 20px;
+
+    background-color: rgba(255, 255, 255, 0.9);
+
+    color: #2b1b12;
+
+    text-align: center;
+}
+
+.middle-card-text h2 {
+    margin-top: 0;
+}
+
+
+/* ==================================================
+   IMAGE + TEXT SECTIONS
+================================================== */
+
+.side-section {
+    width: 90%;
+
+    margin: 70px auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 60px;
+}
+
+.side-section.reverse {
+    flex-direction: row-reverse;
+}
+
+
+/* Image */
+
+.side-image {
+    width: 55%;
+}
+
+.side-image img {
+    width: 100%;
+    height: 400px;
+
+    object-fit: cover;
+}
+
+
+/* Text */
+
+.side-text {
+    width: 45%;
+}
+
+.side-text h2 {
+    font-size: 35px;
+
+    margin-top: 0;
+}
+
+.side-text p {
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* Button */
+
+.read-more {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 12px 22px;
+
+    background-color: #2b1b12;
+
+    color: white;
+
+    text-decoration: none;
+}
+
+.read-more:hover {
+    background-color: #d9893c;
+}
+
+
+/* ==================================================
+   FOUR IMAGE GALLERY
+================================================== */
+
+.gallery-section {
+    width: 90%;
+
+    margin: 100px auto;
+
+    text-align: center;
+}
+
+.gallery-section h2 {
+    font-size: 35px;
+}
+
+.gallery-intro {
+    margin-bottom: 35px;
+}
+
+
+/* Gallery layout */
+
+.gallery-grid {
+    height: 600px;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr;
+
+    grid-template-rows: 2fr 1fr;
+
+    gap: 15px;
+}
+
+
+/* BIG IMAGE */
+
+.gallery-big {
+    grid-column: 1 / 2;
+
+    grid-row: 1 / 3;
+}
+
+.gallery-big img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* SMALL IMAGE */
+
+.gallery-small {
+    grid-column: 2 / 4;
+
+    grid-row: 1 / 2;
+}
+
+.gallery-small img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* TWO SMALLEST IMAGES */
+
+.gallery-tiny {
+    overflow: hidden;
+}
+
+.gallery-tiny img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.tiny-one {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.tiny-two {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
+
+/* ==================================================
+   FINAL SECTION
+================================================== */
+
+.final-section {
+    padding: 70px 20%;
+
+    background-color: #dfc4a0;
+
+    text-align: center;
+}
+
+.final-section h2 {
+    font-size: 32px;
+}
+
+.final-section p {
+    line-height: 1.7;
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+    padding: 25px;
+
+    background-color: #24150f;
+
+    color: white;
+
+    text-align: center;
+}
+
+
+/* ==================================================
+   RESPONSIVE DESIGN
+================================================== */
+
+@media screen and (max-width: 800px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .navbar ul {
+        gap: 12px;
+    }
+
+    .navbar a {
+        font-size: 12px;
+    }
+
+
+    /* Three images become one column */
+
+    .top-images {
+        flex-direction: column;
+    }
+
+    .top-card {
+        width: 100%;
+    }
+
+
+    /* Side sections become vertical */
+
+    .side-section,
+    .side-section.reverse {
+        flex-direction: column;
+    }
+
+    .side-image,
+    .side-text {
+        width: 100%;
+        text-align: center;
+
+    }
+    .side-section,
+    .side-text-title{
+        margin-right: 100px;
+    }
+
+
+    /* Gallery becomes simpler */
+
+    .gallery-grid {
+        height: auto;
+
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-rows:
+            300px
+            200px
+            200px;
+    }
+
+    .gallery-big {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .gallery-small {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+    }
+
+    .tiny-one {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+
+    .tiny-two {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+
+
+    /* Smaller title */
+
+    .hero-title h1 {
+        font-size: 40px;
+    }
+
+}
+```
